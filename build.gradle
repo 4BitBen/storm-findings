@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.github.fourbitben.storm.StormRunner"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://oss.sonatype.org/content/repositories/github-releases/"
+    }
+    maven {
+        url "http://clojars.org/repo"
+    }
+}
+
+dependencies {
+    compile 'storm:storm:0.9.0.1',
+            'org.slf4j:slf4j-api:1.7.5', 'log4j:log4j:1.2.17'
+    runtime 'org.slf4j:slf4j-log4j12:1.7.5'
+}
